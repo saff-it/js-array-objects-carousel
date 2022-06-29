@@ -28,16 +28,41 @@ const images = [
     },
 ];
 
+const rowWrapper = document.querySelector('ms_row-cont');
 
+images.forEach((element, i) => {
 
-images.forEach((element, index) => {
-    console.log(element.title, index );
+    let domContainer = document.createElement('div');
+    domContainer.classList.add('col-12', 'w-100', 'ms_carou-img-cont');
+
+    domContainer.innerHTML = `<img src="${element[i].url}" alt="Svezia">
+    <div class="ms_img-text text-end">
+        <h2>${element[i].title}</h2>
+        <p>${element[i].description}</p>
+    </div>`
+
+    rowWrapper.append(domContainer);
+
+    console.log(element.title, i );
 });
 
 
 
 
 
+
+/* <div class="col-12 w-100 ms_carou-img-cont">
+        <img src="" alt="Svezia">
+        <div class="ms_img-text text-end">
+            <h2>Argentina</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta maiores repellendus deleniti natus suscipit.</p>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between"  >
+        <button class="btn btn-danger w-25 mt-4 ms_btn-prev" >Prev</button>
+        <button class="btn btn-danger w-25 mt-4 ms_btn-next" >Next</button>
+    </div> */
 
 
 

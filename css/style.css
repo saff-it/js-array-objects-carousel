@@ -5,7 +5,6 @@ div.ms_carou-img-cont img{
 
 }
 
-
 div.ms_carou-img-cont img.active{
     display: block;
 }
@@ -14,7 +13,6 @@ div.ms_carou-img-cont{
     height: 550px;
     position: relative;
 }
-
 
 div.ms_img-text{
     color: white;
