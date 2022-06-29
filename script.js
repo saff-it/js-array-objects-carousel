@@ -50,7 +50,7 @@ images.forEach((element, i) => {
     domImg.classList.add('active');
 
 
-    let buttonContainer = document.createAttribute('div');
+    let buttonContainer = document.createElement('div');
     buttonContainer.classList.add('d-flex', 'justify-content-between');
 
     buttonContainer.innerHTML = `<button class="btn btn-danger w-25 mt-4 ms_btn-prev" >Prev</button>
