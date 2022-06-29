@@ -46,11 +46,12 @@ images.forEach((element, i) => {
     rowWrapper.append(domContainer);
 
 
-    const domImg = document.querySelector('div.ms_carou-img-cont img');
+    const domImg = document.querySelector('div.ms_carou-img-cont');
     domImg.classList.add('active');
 
+});
 
-    let buttonContainer = document.createElement('div');
+let buttonContainer = document.createElement('div');
     buttonContainer.classList.add('d-flex', 'justify-content-between');
 
     buttonContainer.innerHTML = `<button class="btn btn-danger w-25 mt-4 ms_btn-prev" >Prev</button>
@@ -58,25 +59,8 @@ images.forEach((element, i) => {
 
     rowWrapper.append(buttonContainer);
 
-});
+    console.log(buttonContainer);
 
-
-
-
-
-
-/* <div class="col-12 w-100 ms_carou-img-cont">
-        <img src="" alt="Svezia">
-        <div class="ms_img-text text-end">
-            <h2>Argentina</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta maiores repellendus deleniti natus suscipit.</p>
-        </div>
-    </div>
-
-    <div class="d-flex justify-content-between"  >
-        <button class="btn btn-danger w-25 mt-4 ms_btn-prev" >Prev</button>
-        <button class="btn btn-danger w-25 mt-4 ms_btn-next" >Next</button>
-    </div> */
 
 
 

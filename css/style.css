@@ -1,11 +1,16 @@
 div.ms_carou-img-cont img{
-    display: none;
+    
     width: 100%;
     height: 100%;
 
 }
 
-div.ms_carou-img-cont img.active{
+div.ms_carou-img-cont{
+    display: none;
+}
+
+
+div.ms_carou-img-cont.active{
     display: block;
 }
 
