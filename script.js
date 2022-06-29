@@ -76,18 +76,12 @@ console.log(buttonContainer);
 const buttonNext = document.querySelector('.ms_btn-next');
 const buttonPrev = document.querySelector('.ms_btn-prev');
 
+const clock = setInterval(autoPlay, 3000, domImgCont);
 
 
 buttonNext.addEventListener('click', function(){
 
-    domImgCont[activeElement].classList.remove('active');
-    activeElement++;
-
-    if ( activeElement == images.length){
-        activeElement = 0;
-    }
-
-    domImgCont[activeElement].classList.add('active');
+    autoPlay(domImgCont);
 
 });
 
@@ -105,3 +99,16 @@ buttonPrev.addEventListener('click', function(){
 });
 
 
+
+
+
+function autoPlay(contentToDisplay) {
+    contentToDisplay[activeElement].classList.remove('active');
+    activeElement++;
+
+    if ( activeElement == images.length){
+        activeElement = 0;
+    }
+
+    contentToDisplay[activeElement].classList.add('active');
+};
