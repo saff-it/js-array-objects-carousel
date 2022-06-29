@@ -48,12 +48,12 @@ images.forEach((element, i) => {
 });
 
 
-let domImgCont = document.querySelector('div.ms_carou-img-cont');
+let domImgCont = document.querySelectorAll('div.ms_carou-img-cont');
 
 images.forEach((element, i) => {
 
     if ( i == activeElement) {
-        domImgCont.classList.add('active');
+        domImgCont[0].classList.add('active');
     }
     
     console.log(domImgCont);
@@ -63,14 +63,14 @@ images.forEach((element, i) => {
 
 
 const buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('d-flex', 'justify-content-between');
+buttonContainer.classList.add('d-flex', 'justify-content-between');
 
-    buttonContainer.innerHTML = `<button class="btn btn-danger w-25 mt-4 ms_btn-prev" >Prev</button>
-    <button class="btn btn-danger w-25 mt-4 ms_btn-next" >Next</button>`;
+buttonContainer.innerHTML = `<button class="btn btn-danger w-25 mt-4 ms_btn-prev" >Prev</button>
+<button class="btn btn-danger w-25 mt-4 ms_btn-next" >Next</button>`;
 
-    rowWrapper.append(buttonContainer);
+rowWrapper.append(buttonContainer);
 
-    console.log(buttonContainer);
+console.log(buttonContainer);
 
 
 const buttonNext = document.querySelector('.ms_btn-next');
@@ -79,8 +79,28 @@ const buttonPrev = document.querySelector('.ms_btn-prev');
 
 
 buttonNext.addEventListener('click', function(){
-    domImgCont.classList.toggle('active');
-    domImgCont++;
+
+    domImgCont[activeElement].classList.remove('active');
+    activeElement++;
+
+    if ( activeElement == images.length){
+        activeElement = 0;
+    }
+
+    domImgCont[activeElement].classList.add('active');
+
+});
+
+buttonPrev.addEventListener('click', function(){
+
+    domImgCont[activeElement].classList.remove('active');
+    activeElement--;
+
+    if ( activeElement == -1){
+        activeElement = images.length -1;
+    }
+
+    domImgCont[activeElement].classList.add('active');
 
 });
 
