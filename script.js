@@ -52,7 +52,7 @@ let domImgCont = document.querySelector('div.ms_carou-img-cont');
 
 images.forEach((element, i) => {
 
-    if (element[i] == activeElement) {
+    if ( i == activeElement) {
         domImgCont.classList.add('active');
     }
     
