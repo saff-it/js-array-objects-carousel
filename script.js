@@ -45,13 +45,24 @@ images.forEach((element, i) => {
 
     rowWrapper.append(domContainer);
 
-
-    const domImg = document.querySelector('div.ms_carou-img-cont');
-    domImg.classList.add('active');
-
 });
 
-let buttonContainer = document.createElement('div');
+
+let domImgCont = document.querySelector('div.ms_carou-img-cont');
+
+images.forEach((element, i) => {
+
+    if (element[i] == activeElement) {
+        domImgCont.classList.add('active');
+    }
+    
+    console.log(domImgCont);
+    
+});
+
+
+
+const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('d-flex', 'justify-content-between');
 
     buttonContainer.innerHTML = `<button class="btn btn-danger w-25 mt-4 ms_btn-prev" >Prev</button>
@@ -62,42 +73,16 @@ let buttonContainer = document.createElement('div');
     console.log(buttonContainer);
 
 
+const buttonNext = document.querySelector('.ms_btn-next');
+const buttonPrev = document.querySelector('.ms_btn-prev');
 
 
 
+buttonNext.addEventListener('click', function(){
+    domImgCont.classList.toggle('active');
+    domImgCont++;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 
 
