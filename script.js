@@ -28,18 +28,19 @@ const images = [
     },
 ];
 
+
 const rowWrapper = document.querySelector('ms_row-cont');
 
-images.forEach((element, i) => {
+images.forEach((element) => {
 
     let domContainer = document.createElement('div');
     domContainer.classList.add('col-12', 'w-100', 'ms_carou-img-cont');
 
-    domContainer.innerHTML = `<img src="${element[i].url}" alt="Svezia">
+    domContainer.innerHTML = `<img src="${element.url}" alt="Svezia">
     <div class="ms_img-text text-end">
-        <h2>${element[i].title}</h2>
-        <p>${element[i].description}</p>
-    </div>`
+        <h2>${element.title}</h2>
+        <p>${element.description}</p>
+    </div>`;
 
     rowWrapper.append(domContainer);
 
