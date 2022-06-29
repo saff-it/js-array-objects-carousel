@@ -75,6 +75,8 @@ console.log(buttonContainer);
 
 const buttonNext = document.querySelector('.ms_btn-next');
 const buttonPrev = document.querySelector('.ms_btn-prev');
+const buttonStart = document.querySelector('.ms_btn-start');
+const buttonStop = document.querySelector('.ms_btn-stop');
 
 const clock = setInterval(autoPlay, 3000, domImgCont);
 
@@ -99,8 +101,27 @@ buttonPrev.addEventListener('click', function(){
 });
 
 
+buttonStop.addEventListener('click', function(){
+
+    clearTimeout(clock);
+
+});
+
+buttonStart.addEventListener('click', function(){
+
+    setInterval(autoPlay, 3000, domImgCont);
+
+});
 
 
+
+
+
+
+
+
+
+// FUNCTION
 
 function autoPlay(contentToDisplay) {
     contentToDisplay[activeElement].classList.remove('active');
