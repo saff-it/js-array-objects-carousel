@@ -30,6 +30,11 @@ const images = [
 
 
 
+images.forEach((element, index) => {
+    console.log(element.title, index );
+});
+
+
 
 
 

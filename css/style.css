@@ -1,7 +1,7 @@
 div.ms_carou-img-cont img{
     /* display: none; */
     height: 100%;
-    
+
 }
 
 
@@ -11,4 +11,15 @@ div.ms_carou-img-cont img.active{
 
 div.ms_carou-img-cont{
     height: 450px;
+    display: relative;
+}
+
+div.ms_img-text p{
+    font-size: 0.8rem;
+}
+
+div.ms_img-text{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
