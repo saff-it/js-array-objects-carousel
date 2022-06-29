@@ -29,9 +29,10 @@ const images = [
 ];
 
 
-const rowWrapper = document.querySelector('ms_row-cont');
+const rowWrapper = document.querySelector('.ms_row-cont');
+let activeElement = 0;
 
-images.forEach((element) => {
+images.forEach((element, i) => {
 
     let domContainer = document.createElement('div');
     domContainer.classList.add('col-12', 'w-100', 'ms_carou-img-cont');
@@ -44,7 +45,19 @@ images.forEach((element) => {
 
     rowWrapper.append(domContainer);
 
-    console.log(element.title, i );
+
+    const domImg = document.querySelector('div.ms_carou-img-cont img');
+    domImg.classList.add('active');
+
+
+    let buttonContainer = document.createAttribute('div');
+    buttonContainer.classList.add('d-flex', 'justify-content-between');
+
+    buttonContainer.innerHTML = `<button class="btn btn-danger w-25 mt-4 ms_btn-prev" >Prev</button>
+    <button class="btn btn-danger w-25 mt-4 ms_btn-next" >Next</button>`;
+
+    rowWrapper.append(buttonContainer);
+
 });
 
 
